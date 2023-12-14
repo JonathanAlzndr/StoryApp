@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">MyStoryApp</string>
+    <string name="signup">Signup</string>
+    <string name="login">Login</string>
+    <string name="message_welcome_page">Create unforgettable posts, and the world will follow you</string>
+    <string name="title_welcome_page">Welcome to MyStory!</string>
+    <string name="title_signup_page">Complete your identity below</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="message_login_page">Please fill this form</string>
+    <string name="title_login_page">Ready to make story?</string>
+    <string name="name">Name</string>
+    <string name="menu_1">New Story</string>
+    <string name="menu_2">Logout</string>
+    <string name="title_activity_upload">UploadActivity</string>
+    <string name="gallery">Gallery</string>
+    <string name="camera">Camera</string>
+    <string name="description">Description</string>
+    <string name="upload">Upload</string>
+    <string name="empty_image_warning">No image</string>
+    <string name="map">Map</string>
+    <string name="title_activity_maps">MapsActivity</string>
+    <string name="retry">Retry</string>
+</resources>
