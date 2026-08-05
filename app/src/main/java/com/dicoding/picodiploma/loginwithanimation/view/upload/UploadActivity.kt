@@ -111,7 +111,9 @@ class UploadActivity : AppCompatActivity() {
 
     private fun startCamera() {
         currentImageUri = getImageUri(this)
-        launcherIntentCamera.launch(currentImageUri)
+        currentImageUri?.let {
+            launcherIntentCamera.launch(it)
+        }
     }
 
     private fun showLoading(isLoading: Boolean) {
