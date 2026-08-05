@@ -12,8 +12,6 @@ This project was built as part of my Android development learning journey, focus
 
 ### 🏠 Welcome
 
-### 🏠 Welcome
-
 <img src="screenshots/welcome.jpeg" alt="Welcome Screen" width="250"/>
 
 ### 🔐 Login
