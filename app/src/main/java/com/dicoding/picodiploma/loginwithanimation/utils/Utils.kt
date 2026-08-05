@@ -17,8 +17,10 @@ import java.io.File
 import java.io.FileOutputStream
 import java.io.InputStream
 import java.text.SimpleDateFormat
+import java.time.Instant
 import java.util.Date
 import java.util.Locale
+import java.util.TimeZone
 
 private const val FILENAME_FORMAT = "yyyyMMdd_HHmmss"
 private const val MAXIMAL_SIZE = 1000000
@@ -94,6 +96,23 @@ fun Bitmap.getRotatedBitmap(file: File): Bitmap {
         ExifInterface.ORIENTATION_ROTATE_270 -> rotateImage(this, 270F)
         ExifInterface.ORIENTATION_NORMAL -> this
         else -> this
+    }
+}
+
+fun formatApiUtcToLocal(apiUtcString: String): String {
+    try {
+        val inputFormat = SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'", Locale.US)
+        inputFormat.timeZone = TimeZone.getTimeZone("UTC")
+
+        val date: Date? = inputFormat.parse(apiUtcString)
+
+        val outputFormat = SimpleDateFormat("dd MMMM yyyy, HH:mm", Locale("id", "ID"))
+        outputFormat.timeZone = TimeZone.getDefault()
+
+        return if (date != null) outputFormat.format(date) else apiUtcString
+    } catch (e: Exception) {
+        e.printStackTrace()
+        return apiUtcString
     }
 }
 
